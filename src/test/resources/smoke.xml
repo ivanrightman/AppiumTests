@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke suite">
+    <listeners>
+        <listener class-name="com.learning.appium.utils.TestListener"/>
+    </listeners>
+    <test name="Smoke" parallel="classes" thread-count="2">
+        <packages>
+            <package name="com.learning.appium.*"/>
+        </packages>
+    </test>
+</suite>
