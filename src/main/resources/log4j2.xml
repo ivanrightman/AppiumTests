@@ -1,0 +1,25 @@
+<Configuration>
+
+    <Properties>
+        <Property name="basePath">./target/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout>
+                <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <File name="File" fileName="${basePath}/app-${date:yyyy-MM-dd}.log"
+              filePattern="${basePath}/app-%d{yyyy-MM-dd}-%i.log" append="true" >
+            <PatternLayout>
+                <Pattern>%d %p %c{2} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
